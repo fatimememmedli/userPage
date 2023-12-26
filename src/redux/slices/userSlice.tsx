@@ -2,23 +2,27 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getAllUsers = createAsyncThunk<Array<object>, void, {state:UserStateType}>("getAllUsers", async () => {
+export const getAllUsers = createAsyncThunk<
+  Array<object>,
+  void,
+  { state: UserStateType }
+>("getAllUsers", async () => {
   const response = await axios.get("https://usersapitaskk.onrender.com/users");
   console.log(response.data);
   return response.data;
 });
 export interface UserStateType {
   users: object[];
-  isLogin:boolean,
+  isLogin: boolean;
   error: string;
   loading: boolean;
 }
 
 const initialState: UserStateType = {
   users: [],
-  isLogin:false,
+  isLogin: true,
   error: "",
-  
+
   loading: false,
 };
 
@@ -26,9 +30,9 @@ export const userSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    login: ( state,action ) => {
+    login: (state, action) => {
       // console.log(current(state.users));
-      state.isLogin=action.payload
+      state.isLogin = action.payload;
     },
   },
 

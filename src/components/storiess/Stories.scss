@@ -1,0 +1,44 @@
+.storiesComponent {
+  padding: 30px 0;
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width: 1400px;
+    margin: 0 auto;
+    .text {
+      p {
+        font-weight: bold;
+        font-size: 30px;
+      }
+    }
+    .stories {
+      display: flex;
+      gap: 30px;
+      .add-story {
+        width: 90px;
+        height: 90px;
+        border: 5px solid #e94c65;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        .fa-plus {
+          color: #e94c65;
+          font-size: 26px;
+        }
+      }
+      .story {
+        width: 90px;
+        height: 90px;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
