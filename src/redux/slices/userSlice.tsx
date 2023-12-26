@@ -16,7 +16,7 @@ export interface UserStateType {
 
 const initialState: UserStateType = {
   users: [],
-  isLogin:true,
+  isLogin:false,
   error: "",
   
   loading: false,
