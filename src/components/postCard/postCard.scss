@@ -38,4 +38,36 @@
       object-fit: cover;
     }
   }
+  .post-details{
+    padding: 10px 30px;
+    padding-bottom: 34px;
+    .icons{
+      display: flex;
+      gap: 20px;
+      padding-bottom: 4px;
+      .icon{
+        .fa-heart{
+          font-size: 30px;
+        }
+        .fa-comment{
+          font-size: 30px;
+
+        }
+
+      }
+    }
+    .like-count{
+      padding: 3px 0;
+    }
+    .title{
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding: 15px 0;
+      p{
+        // font-weight: 500;
+        font-size: large;
+      }
+    }
+  }
 }

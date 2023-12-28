@@ -25,12 +25,12 @@ function Home() {
     });
   }, []);
 
-  const users = useSelector((state: RootState) => state.users.users);
-  console.log(users);
-  const isLogin: boolean = useSelector(
-    (state: UserStateType) => state.users.isLogin
-  );
-  console.log(isLogin);
+  // const users = useSelector((state: RootState) => state.users.users);
+  // console.log(users);
+  // const isLogin: boolean = useSelector(
+  //   (state: UserStateType) => state.users.isLogin
+  // );
+  // console.log(isLogin);
   return (
     <div>
       <Navbar />

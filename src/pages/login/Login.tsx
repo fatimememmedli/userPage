@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Login.scss";
 import { useFormik } from "formik";
-import type { RootState } from "./../redux/store/store";
 import  axios  from "axios";
 import Swal from 'sweetalert2'
 import { login } from "../../redux/slices/userSlice";
 import { useNavigate } from "react-router-dom";
+import type { RootState } from "./../redux/store/store";
 import {getAllUsers} from "../../redux/slices/userSlice"
-
 import { useSelector, useDispatch } from "react-redux";
 interface valuesType {
   username: string;
@@ -18,11 +17,12 @@ function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
-  // const users = useSelector((state: RootState) => state.users.users); 
+ 
+  useEffect(() => {
+   dispatch(getAllUsers())
+  }, [dispatch]);
+   const users = useSelector((state: RootState) => state.users.users); 
   // console.log(users);
-  // useEffect(() => {
-  //  dispatch(getAllUsers())
-  // }, [dispatch]);
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -32,7 +32,7 @@ function Login() {
       console.log(values);
       axios.post("http://localhost:5000/login",values).then((res)=>{
         console.log(res.data)
-localStorage.setItem("token", res.data)
+// localStorage.setItem("token", res.data)
 
         if(res.status==201){
           Swal.fire({
@@ -47,6 +47,9 @@ localStorage.setItem("token", res.data)
           Swal.fire(`Wellcome`);
           dispatch(login(true))
           navigate("/")
+  let loginUser = users.find((element)=> element.username == values.username && element.password == values.password)
+  localStorage.setItem("loginId", loginUser.id)
+
         }
       })
 

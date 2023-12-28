@@ -1,0 +1,109 @@
+.profilePage{
+    padding: 70px 20px;
+    width: 1400px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    .profile-info{
+        justify-content: center;
+display: flex;
+padding: 30px 0;
+gap: 150px;
+align-items: center;
+padding: 40px 40px;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+border-radius: 20px;
+.info-left{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.info-right{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .username-editBtn{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        gap: 80px;
+        p{
+            font-weight: 500;
+            font-size: 28px;
+        }
+        .edit-btn{
+            button{
+                padding: 10px 30px;
+                border: none;
+                cursor: pointer;
+                background-color: #e84d66ff;
+                color: white;
+                border-radius: 10px;
+                font-size: large;
+            }
+            
+        }
+    }
+    .post-followers-following{
+        display: flex;
+        gap: 30px;
+        .count{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            p{
+                font-size: 26px;
+                font-weight: 500;
+            }
+            span{
+                font-size: 26px;
+            }
+        }
+    }
+    .name-surname{
+        p{
+            font-size: 22px;
+            font-weight: 500;
+
+        }
+    }
+}
+    }
+    .posts{
+        width: 1400px;
+        border-top: 2px solid rgba(128, 128, 128, 0.304);
+        .postTitle{
+            padding: 60px 0;
+            h1{
+            text-align: center;
+            }
+        }
+        .images{
+            display: flex;
+            flex-wrap: wrap;
+            .image{
+                width: 350px;
+                height: 350px;
+                overflow: hidden;
+                border: 1px solid white;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+    
+            }
+        }
+    }
+
+}
